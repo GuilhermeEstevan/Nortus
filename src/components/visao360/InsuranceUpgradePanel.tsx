@@ -6,7 +6,7 @@ const InsuranceUpgradePanel = () => {
         <h3 className="text-xl font-bold leading-tight tracking-[-0.015em]">
           Upgrade do seguro residencial
         </h3>
-        <p className="text-sm font-normal text-white mt-3 leading-4 tracking-tighter">
+        <p className="text-sm font-normal text-white mt-3 leading-tight tracking-tighter">
           Plano Completo com proteção contra danos elétricos e assistência 24h
         </p>
       </div>

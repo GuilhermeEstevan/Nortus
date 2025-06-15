@@ -1,6 +1,7 @@
 import ClientInfoPanel from "@/components/visao360/ClientInfoPanel";
 import InsuranceUpgradePanel from "@/components/visao360/InsuranceUpgradePanel";
 import IntelligentRatingPanel from "@/components/visao360/IntelligentRatingPanel";
+import LifeInsurancePanel from "@/components/visao360/LifeInsurancePanel";
 export default function Visao360Page() {
   return (
     <div className="p-6">
@@ -14,8 +15,8 @@ export default function Visao360Page() {
             <div className="bg-[#1F2937] rounded-xl p-4 h-full">Coluna 2</div>
 
             <div className="flex flex-col gap-6 h-full">
-              <div className="bg-[#0F172A] rounded-xl p-4 flex-1 min-h-[210px]">
-                Coluna 3.1
+              <div className="flex-1 min-h-[210px]">
+                <LifeInsurancePanel />
               </div>
               <div className="min-h-[210px]">
                 <InsuranceUpgradePanel />
