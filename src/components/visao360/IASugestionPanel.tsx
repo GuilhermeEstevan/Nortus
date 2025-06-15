@@ -1,6 +1,12 @@
+"use client";
+import { useState } from "react";
 import Bullet from "../ui/Bullet";
-
+import Image from "next/image";
+import iaAssistent from "@/public/icons/iaAssist.png";
+import { X } from "lucide-react";
 const IaSuggestionPanel = () => {
+  const [showIa, setShowIa] = useState(false);
+
   return (
     <div className="rounded-3xl p-6 bg-gradient-to-br from-[#1f2635] to-[#1b2230] text-white h-full flex flex-col gap-6 border-1 border-white/10 shadow-inner">
       {/* Título e tabs */}
@@ -68,10 +74,39 @@ const IaSuggestionPanel = () => {
         </div>
 
         <div>
-          <button className="text-xs text-white bg-[#1876D2] w-[186px] h-[40px] rounded-full font-semibold transition hover:bg-white hover:text-[#0d223a] shadow-[0_0_10px_#1876D2]">
+          <button
+            onClick={() => setShowIa(true)}
+            className="text-xs text-white bg-[#1876D2] w-[186px] h-[40px] rounded-full font-semibold transition hover:bg-white hover:text-[#0d223a] shadow-[0_0_10px_#1876D2]"
+          >
             Simular conversa com IA
           </button>
         </div>
+
+        {/* IA Assistente */}
+        {showIa && (
+          <div className="group absolute bottom-10 right-[10px] xl:bottom-10 xl:right-4 animate-fade-in z-30">
+            <button
+              onClick={() => setShowIa(false)}
+              className="absolute -top-10 -right-0 bg-red-600 text-white w-6 h-6 rounded-full text-xs flex items-center justify-center z-40 hover:bg-red-700 opacity-0 min-[1000px]:opacity-100 group-hover:opacity-100 transition-opacity duration-200"
+            >
+              <span className="flex justify-center items-center">
+                <X className="w-3 h-3" />
+              </span>
+            </button>
+
+            <button className="relative w-[137px] h-[137px] rounded-full bg-[#2ABBDD] shadow-[0_0_40px_#2ABBDD] overflow-visible">
+              <div className="absolute inset-0 rounded-full overflow-visible">
+                <Image
+                  src={iaAssistent}
+                  alt="Assistente IA"
+                  width={160}
+                  height={160}
+                  className="absolute -top-[65px] left-1/2 -translate-x-1/2 clip-bottom-rounded"
+                />
+              </div>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

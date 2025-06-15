@@ -34,7 +34,7 @@ export default function Sidebar() {
   return (
     <aside
       className="flex flex-col items-center bg-[#20273e] py-4 w-[150px] border-r border-gray-800 drop-shadow-2xl
-                 rounded-tr-4xl rounded-br-4xl h-screen z-10"
+                 rounded-tr-4xl rounded-br-4xl h-screen z-20"
     >
       <div className="mb-6">
         <div className="h-10 w-10 rounded-full  flex items-center justify-center text-xl font-bold">

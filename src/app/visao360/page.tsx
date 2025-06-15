@@ -3,28 +3,30 @@ import IaSuggestionPanel from "@/components/visao360/IASugestionPanel";
 import InsuranceUpgradePanel from "@/components/visao360/InsuranceUpgradePanel";
 import IntelligentRatingPanel from "@/components/visao360/IntelligentRatingPanel";
 import LifeInsurancePanel from "@/components/visao360/LifeInsurancePanel";
+
 export default function Visao360Page() {
   return (
-    <div className="p-6">
-      <div className="max-w-[1680px] mx-auto flex gap-6">
-        <div className="w-[365px]">
+    <div className="p-4 xl:p-6">
+      <div className="max-w-[1680px] mx-auto flex flex-col xl:flex-row gap-6">
+        {/* Painel lateral */}
+        <div className="w-full xl:w-[365px] shrink-0">
           <ClientInfoPanel />
         </div>
 
-        <div className="flex-1 flex flex-col gap-6">
-          <div className="grid grid-cols-[2.5fr_1fr] gap-6 min-h-[420px]">
-            <IaSuggestionPanel />
-            <div className="flex flex-col gap-6 h-full">
-              <div className="flex-1 min-h-[210px]">
-                <LifeInsurancePanel />
-              </div>
-              <div className="min-h-[210px]">
-                <InsuranceUpgradePanel />
-              </div>
+        {/* Conteúdo principal */}
+        <div className="flex-1 flex flex-col gap-6 w-full">
+          <div className="flex flex-col gap-6 xl:grid xl:grid-cols-3 w-full">
+            <div className="xl:col-span-2 w-full">
+              <IaSuggestionPanel />
+            </div>
+
+            <div className="flex flex-col gap-6 w-full">
+              <LifeInsurancePanel />
+              <InsuranceUpgradePanel />
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-[#1c2332] to-[#0e1726] rounded-xl p-4 border-1 border-white/10">
+          <div className="w-full bg-gradient-to-br from-[#1c2332] to-[#0e1726] rounded-xl p-4 border border-white/10">
             <IntelligentRatingPanel />
           </div>
         </div>
