@@ -7,8 +7,8 @@ import Image from "next/image";
 
 const ClientInfoPanel = () => {
   return (
-    <div className="bg-[#111827] rounded-xl p-2 ">
-      <div className="bg-[#111827] rounded-xl p-4 h-auto  text-white">
+    <div className="h-full rounded-xl px-2">
+      <div className="bg-[#111827] rounded-xl p-4 h-full  text-white">
         <div className="text-center mb-8">
           <h2 className="text-lg font-semibold">Ricardo Leite</h2>
         </div>
@@ -30,7 +30,7 @@ const ClientInfoPanel = () => {
         </div>
 
         {/* Separador */}
-        <div className="-mx-6 mt-6">
+        <div className="-mx-4 mt-6">
           <hr className="w-full border-t border-gray-700 my-3 opacity-50" />
         </div>
 
@@ -43,46 +43,48 @@ const ClientInfoPanel = () => {
             </button>
           </div>
           <ul className="text-sm space-y-3">
-            <li className="flex justify-between items-center">
+            <li className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span className="w-2 h-2 bg-green-500 rounded-full" />
                 Seguro automóvel
               </span>
               <span className="text-right">R$ 185,90/mês</span>
               <button>
                 <Image
                   src={productsLinsIcon}
-                  alt="Telefone"
+                  alt="Abrir"
                   width={16}
                   height={16}
                 />
               </button>
             </li>
-            <li className="flex justify-between items-center">
+
+            <li className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span className="w-2 h-2 bg-green-500 rounded-full" />
                 Seguro Residencial
               </span>
               <span className="text-right">R$ 89,90/mês</span>
               <button>
                 <Image
                   src={productsLinsIcon}
-                  alt="Telefone"
+                  alt="Abrir"
                   width={16}
                   height={16}
                 />
               </button>
             </li>
-            <li className="flex justify-between items-center text-gray-500">
+
+            <li className="grid grid-cols-[auto_1fr_auto] items-center gap-3 text-gray-500">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                <span className="w-2 h-2 bg-red-500 rounded-full" />
                 Seguro Viagem
               </span>
               <span className="text-right">R$ 230,00/mês</span>
               <button>
                 <Image
                   src={productsLinsIcon}
-                  alt="Telefone"
+                  alt="Abrir"
                   width={16}
                   height={16}
                 />
@@ -92,7 +94,7 @@ const ClientInfoPanel = () => {
         </div>
 
         {/* Separador */}
-        <div className="-mx-6 mt-6">
+        <div className="-mx-4 mt-6">
           <hr className="w-full border-t border-gray-700 my-3 opacity-50" />
         </div>
 
@@ -114,7 +116,7 @@ const ClientInfoPanel = () => {
         </div>
 
         {/* Separador */}
-        <div className="-mx-6 mt-6">
+        <div className="-mx-4 mt-6">
           <hr className="w-full border-t border-gray-700 my-3 opacity-50" />
         </div>
 
@@ -142,7 +144,7 @@ const ClientInfoPanel = () => {
         </div>
 
         {/* Separador */}
-        <div className="-mx-6 mt-6">
+        <div className="-mx-4 mt-6">
           <hr className="w-full border-t border-gray-700 my-3 opacity-50" />
         </div>
 
@@ -163,6 +165,10 @@ const ClientInfoPanel = () => {
               <span className="text-gray-500 text-xs">1 dia atrás</span>
               <br />
               <span>Iniciou simulação de seguro auto</span>
+              <br />
+              <span className="text-gray-500 text-xs">
+                Tempo na página 5min e 22 seg
+              </span>
             </li>
           </ul>
         </div>
