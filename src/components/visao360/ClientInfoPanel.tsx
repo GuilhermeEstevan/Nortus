@@ -8,23 +8,41 @@ import Image from "next/image";
 const ClientInfoPanel = () => {
   return (
     <div className="h-full rounded-xl px-4 ">
-      <div className="bg-[#111827] rounded-xl p-4 px-5 h-full border-1 border-gray-800 text-white ">
+      <div className="bg-[#111827] rounded-xl p-4 px-5 h-full border-1 border-white/10 text-white ">
         <div className="text-center mb-8 mt-6">
           <h2 className="text-lg font-bold">Ricardo Leite</h2>
         </div>
 
         {/* Ações rápidas */}
         <div className="flex justify-around text-sm text-blue-300 ">
-          <button className="flex flex-col items-center gap-2">
-            <Image src={phoneIcon} alt="Telefone" width={24} height={24} />
+          <button className="group flex flex-col items-center gap-2">
+            <Image
+              src={phoneIcon}
+              alt="Telefone"
+              width={24}
+              height={24}
+              className="group-hover:animate-[wiggle_0.5s_ease-in-out]"
+            />
             <span>Telefonar</span>
           </button>
-          <button className="flex flex-col items-center gap-2">
-            <Image src={emailIcon} alt="e-mail" width={24} height={24} />
+          <button className="group flex flex-col items-center gap-2">
+            <Image
+              src={emailIcon}
+              alt="e-mail"
+              width={24}
+              height={24}
+              className="group-hover:animate-[wiggle_0.5s_ease-in-out]"
+            />
             <span>Enviar e-mail</span>
           </button>
-          <button className="flex flex-col items-center gap-2">
-            <Image src={dotsIcon} alt="Telefone" width={24} height={24} />
+          <button className="group flex flex-col items-center gap-2">
+            <Image
+              src={dotsIcon}
+              alt="Telefone"
+              width={24}
+              height={24}
+              className="group-hover:animate-[wiggle_0.5s_ease-in-out]"
+            />
             <span>Ver mais</span>
           </button>
         </div>

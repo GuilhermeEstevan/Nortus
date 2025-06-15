@@ -3,7 +3,7 @@ import ProgressChart from "../charts/ProgressChart";
 
 const IntelligentRatingPanel = () => {
   return (
-    <div className="text-white space-y-6">
+    <div className="text-white space-y-6 ">
       <h2 className="text-xl font-extrabold">Classificação inteligente</h2>
 
       <div className="px-2 rounded-xl grid grid-cols-[1fr_2fr] gap-6 items-center">
