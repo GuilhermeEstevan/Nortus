@@ -1,8 +1,9 @@
-import ClientInfoPanel from "@/components/visao360/ClientInfo";
+import ClientInfoPanel from "@/components/visao360/ClientInfoPanel";
+import IntelligentRatingPanel from "@/components/visao360/IntelligentRatingPanel";
 export default function Visao360Page() {
   return (
     <div className="p-6">
-      <div className="max-w-[1440px] mx-auto flex gap-6">
+      <div className="max-w-[1680px] mx-auto flex gap-6">
         <div className="w-[365px]">
           <ClientInfoPanel />
         </div>
@@ -21,7 +22,9 @@ export default function Visao360Page() {
             </div>
           </div>
 
-          <div className="bg-[#1E293B] rounded-xl p-4 h-[250px]">Rodapé</div>
+          <div className="bg-gradient-to-br from-[#1c2332] to-[#0e1726] rounded-xl p-4 ">
+            <IntelligentRatingPanel />
+          </div>
         </div>
       </div>
     </div>
