@@ -7,12 +7,12 @@ const IntelligentRatingPanel = () => {
       <h2 className="text-xl font-extrabold">Classificação inteligente</h2>
 
       <div className="px-2 rounded-xl grid grid-cols-[1fr_2fr] gap-6 items-center">
-        <div className="flex flex-col items-center justify-center text-center space-y-6 px-4 py-10 bg-[linear-gradient(to_right,#23283A,#212639,#212638)] rounded-xl">
+        <div className="flex flex-col items-center justify-center text-center space-y-6 px-4 py-10 bg-[linear-gradient(to_right,#23283A,#212639,#212638)] rounded-xl shadow-lg">
           <DiamondGaugeChart value={75} />
 
           <div className="flex items-start justify-between w-full text-sm px-2">
             <div className="flex flex-col items-start w-full">
-              <span className="text-gray-400 text-xs mb-1 whitespace-nowrap">
+              <span className="text-white/50 text-xs mb-1 whitespace-nowrap">
                 Life time value
               </span>
               <span className="text-white text-lg font-extrabold whitespace-nowrap">
@@ -23,7 +23,7 @@ const IntelligentRatingPanel = () => {
             <div className="w-px h-10 bg-gray-600 mx-6" />
 
             <div className="flex flex-col items-start w-full">
-              <span className="text-gray-400 text-xs mb-1 whitespace-nowrap">
+              <span className="text-white/50 text-xs mb-1 whitespace-nowrap">
                 Probabilidade de churn
               </span>
               <span className="text-green-500 text-lg font-bold whitespace-nowrap">
@@ -34,13 +34,12 @@ const IntelligentRatingPanel = () => {
         </div>
 
         <div className="flex flex-col gap-4 h-full">
-          {/* Score de expansão */}
-          <div className="flex-1 py-6 px-4 bg-[linear-gradient(to_right,#23283A,#212639,#212638)] rounded-xl flex flex-col justify-between">
+          <div className="flex-1 py-6 px-4 bg-[linear-gradient(to_right,#23283A,#212639,#212638)] rounded-xl flex flex-col justify-center gap-8 shadow-lg">
             <div className="flex justify-start mb-1 items-center gap-2">
               <span className="text-sm text-white font-medium">
                 Score de expansão
               </span>
-              <span className="bg-[#00DC04] text-xs px-2 py-1 rounded-full text-black font-semibold">
+              <span className="bg-[#00DC04] text-sm px-4 py-0.5 rounded-full text-white font-medium font-sans tracking-tight">
                 Alto
               </span>
             </div>
@@ -49,13 +48,12 @@ const IntelligentRatingPanel = () => {
             </div>
           </div>
 
-          {/* Score de retenção */}
-          <div className="flex-1 py-6 px-4 bg-[linear-gradient(to_right,#23283A,#212639,#212638)] rounded-xl flex flex-col justify-between">
+          <div className="flex-1 py-6 px-4 bg-[linear-gradient(to_right,#23283A,#212639,#212638)] rounded-xl flex flex-col justify-center gap-8 shadow-lg">
             <div className="flex justify-start gap-2 mb-1 items-center">
               <span className="text-sm text-white font-medium">
                 Score de retenção
               </span>
-              <span className="bg-[#E7BD00] text-xs px-2 py-1 rounded-full text-black font-semibold">
+              <span className="bg-[#E7BD00] text-sm px-4 py-0.5 rounded-full text-white font-medium font-sans tracking-tight">
                 Médio
               </span>
             </div>

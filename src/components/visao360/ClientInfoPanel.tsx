@@ -75,7 +75,7 @@ const ClientInfoPanel = () => {
               </button>
             </li>
 
-            <li className="grid grid-cols-[auto_1fr_auto] items-center gap-3 text-gray-500">
+            <li className="grid grid-cols-[auto_1fr_auto] items-center gap-3 text-white/50">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-500 rounded-full" />
                 Seguro Viagem
@@ -128,7 +128,7 @@ const ClientInfoPanel = () => {
               “Estava procurando um seguro de vida mais completo para minha
               família”
             </span>
-            <p className="text-xs text-gray-400 mt-2 opacity-60">
+            <p className="text-xs text-white/50 mt-2 opacity-60">
               Atendimento do dia 12/05/2025
             </p>
           </div>
@@ -137,7 +137,7 @@ const ClientInfoPanel = () => {
               “O valor do meu seguro auto está muito caro comparado com outras
               empresas”
             </span>
-            <p className="text-xs text-gray-400 mt-2 opacity-60">
+            <p className="text-xs text-white/50 mt-2 opacity-60">
               Atendimento do dia 12/05/2025
             </p>
           </div>
@@ -153,20 +153,20 @@ const ClientInfoPanel = () => {
           <h3 className="font-semibold mb-4">Ações no app</h3>
           <ul className="text-sm text-gray-300 space-y-2">
             <li>
-              <span className="text-gray-500 text-xs">45 min atrás</span>
+              <span className="text-white/50 text-xs">45 min atrás</span>
               <br />
               <span>Consultou página de planos de saúde</span>
               <br />
-              <span className="text-gray-500 text-xs">
+              <span className="text-white/50 text-xs">
                 Tempo na página 3min e 42 seg
               </span>
             </li>
             <li>
-              <span className="text-gray-500 text-xs">1 dia atrás</span>
+              <span className="text-white/50 text-xs">1 dia atrás</span>
               <br />
               <span>Iniciou simulação de seguro auto</span>
               <br />
-              <span className="text-gray-500 text-xs">
+              <span className="text-white/50 text-xs">
                 Tempo na página 5min e 22 seg
               </span>
             </li>

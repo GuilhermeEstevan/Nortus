@@ -60,7 +60,9 @@ const DiamondGaugeChart = ({ value }: Props) => {
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] flex flex-col items-center">
           <Image src={diamondIcon} alt="Diamante" width={32} height={32} />
-          <span className="text-white text-sm font-medium mt-1">Premium</span>
+          <span className="text-white/50 text-sm font-medium mt-1">
+            Premium
+          </span>
         </div>
       </div>
     </div>
