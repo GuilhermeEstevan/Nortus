@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 
-// ApexCharts only client-side
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const SegmentImpactDonut = () => {

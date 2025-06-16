@@ -1,18 +1,11 @@
 import { create } from "zustand";
 import Cookies from "js-cookie";
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  role: string;
-  permissions: string[];
-}
+import { AuthUser } from "@/types/auth";
 
 interface AuthState {
-  user: User | null;
+  user: AuthUser | null;
   token: string | null;
-  login: (user: User, token: string) => void;
+  login: (user: AuthUser, token: string) => void;
   logout: () => void;
 }
 
