@@ -1,4 +1,7 @@
+import ActiveOffersRankingTable from "@/components/dashboard/ActiveOffersRankingTable";
+import PrimaryHighlightPanel from "@/components/dashboard/PrimaryHighlightPanel";
 import KpiEvolutionPanel from "@/components/dashboard/KpiEvolutionPanel";
+import SecondaryHighlightPanel from "@/components/dashboard/SecondaryHighlightPanel";
 
 export default function DashboardPage() {
   return (
@@ -9,19 +12,19 @@ export default function DashboardPage() {
           {/* <div className="bg-blue-900 h-[400px] rounded-xl flex items-center justify-center text-white"> */}
           <KpiEvolutionPanel />
           {/* </div> */}
-          <div className="bg-purple-900 h-[600px] rounded-xl flex items-center justify-center text-white">
-            Ranking de ofertas ativas
-          </div>
+          {/* <div className="bg-purple-900 h-[600px] rounded-xl flex items-center justify-center text-white"> */}
+          <ActiveOffersRankingTable />
+          {/* </div> */}
         </div>
 
         {/* Coluna da direita com KPIs e Mapa + nova seção */}
-        <div className="xl:col-span-4 flex flex-col gap-3">
-          <div className="bg-green-900 h-[120px] rounded-xl flex items-center justify-center text-white">
-            ARPU
-          </div>
-          <div className="bg-green-900 h-[120px] rounded-xl flex items-center justify-center text-white">
-            Conversão IA
-          </div>
+        <div className="xl:col-span-4 flex flex-col gap-6">
+          {/* <div className="bg-green-900 h-[120px] rounded-xl flex items-center justify-center text-white"> */}
+          <PrimaryHighlightPanel />
+          {/* </div> */}
+          {/* <div className="bg-green-900 h-[120px] rounded-xl flex items-center justify-center text-white"> */}
+          <SecondaryHighlightPanel />
+          {/* </div> */}
           <div className="bg-yellow-900 h-[400px] rounded-xl flex items-center justify-center text-white">
             Mapa de impacto por segmento
           </div>

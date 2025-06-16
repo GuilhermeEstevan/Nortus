@@ -9,7 +9,7 @@ const KpiEvolutionPanel = () => {
   const kpis = ["Retenção", "Conversão", "Churn", "ARPU"];
 
   return (
-    <div className="bg-[#111827] text-white rounded-xl p-6 w-full max-h-[376px] h-full flex flex-col">
+    <div className="bg-white/5  text-white rounded-xl p-6 w-full max-h-[376px] h-full flex flex-col">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-bold">Evolução dos KPI's</h2>
         <div className="flex bg-white/5 h-[56px] gap-3 px-4 py-2 rounded-full">
