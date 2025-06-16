@@ -1,10 +1,12 @@
-import axios from "axios";
+import { AuthResponse } from "@/types/auth";
+import { api } from "./api";
 
 export async function fakeLogin() {
-  const res = await axios.get("https://loomi.s3.us-east-1.amazonaws.com/mock-api-json/auth/login.json");
-if (res.status !== 200) { 
-    console.error(`Erro ao fazer login: Status ${res.status}, Mensagem: ${res.statusText}`);
-    throw new Error(`Erro ao fazer login: ${res.statusText || res.status}`);
+  try {
+    const res = await api.get<AuthResponse>("/auth/login.json");
+    return res.data;
+  } catch (err: any) {
+    console.error("Erro ao fazer login:", err.message);
+    throw new Error("Erro ao fazer login");
   }
-  return res.data;
 }

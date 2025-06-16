@@ -1,4 +1,3 @@
-import { Copy } from "lucide-react";
 import Image from "next/image";
 import blueChartIcon from "@/public/icons/blueChartIcon.png";
 import copyIcon from "@/public/icons/copyIcon.png";

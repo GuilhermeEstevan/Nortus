@@ -12,7 +12,7 @@ export default function LoginPage() {
     try {
       const { token, user } = await fakeLogin();
       login(user, token);
-      router.push("/dashboard");
+      router.push("/visao360");
     } catch (err) {
       alert("Erro ao fazer login.");
     }
