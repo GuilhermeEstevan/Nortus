@@ -1,16 +1,26 @@
+"use client";
+
 import ClientInfoPanel from "@/components/visao360/ClientInfoPanel";
 import IaSuggestionPanel from "@/components/visao360/IASugestionPanel";
 import InsuranceUpgradePanel from "@/components/visao360/InsuranceUpgradePanel";
 import IntelligentRatingPanel from "@/components/visao360/IntelligentRatingPanel";
 import LifeInsurancePanel from "@/components/visao360/LifeInsurancePanel";
+import { useClientStore } from "@/stores/client-store";
+import { useEffect } from "react";
 
 export default function Visao360Page() {
+  const { data, loading, error, fetch } = useClientStore();
+
+  useEffect(() => {
+    fetch();
+  }, []);
+
   return (
     <div className="p-4 2xl:p-6">
       <div className="max-w-[1680px] mx-auto flex flex-col 2xl:flex-row gap-6">
         {/* Painel lateral */}
         <div className="w-full 2xl:w-[365px] shrink-0">
-          <ClientInfoPanel />
+          <ClientInfoPanel clientData={data} />
         </div>
 
         {/* Conteúdo principal */}
@@ -21,7 +31,9 @@ export default function Visao360Page() {
             </div>
 
             <div className="flex flex-col gap-6 w-full">
-              <LifeInsurancePanel />
+              <LifeInsurancePanel
+                iaRecommendation={data?.iaRecommendation ?? null}
+              />
               <InsuranceUpgradePanel />
             </div>
           </div>

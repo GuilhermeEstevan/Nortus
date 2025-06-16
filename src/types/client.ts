@@ -16,7 +16,7 @@ export interface Product {
 }
 
 export interface ClientAction {
-  type: string;
+  description: string;
   timestamp: string;
 }
 
