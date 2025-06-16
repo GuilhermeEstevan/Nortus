@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingSpinner from "@/components/spinners/LoadingSpinner";
 import ClientInfoPanel from "@/components/visao360/ClientInfoPanel";
 import IaSuggestionPanel from "@/components/visao360/IASugestionPanel";
 import InsuranceUpgradePanel from "@/components/visao360/InsuranceUpgradePanel";
@@ -9,12 +10,19 @@ import { useClientStore } from "@/stores/client-store";
 import { useEffect } from "react";
 
 export default function Visao360Page() {
-  const { data, loading, error, fetch } = useClientStore();
+  const { data, loading, error, fetch, hasLoadedOnce } = useClientStore();
 
   useEffect(() => {
     fetch();
   }, []);
 
+  if (!hasLoadedOnce) {
+    return (
+      <div className="w-full h-[60vh] flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
   return (
     <div className="p-4 2xl:p-6">
       <div className="max-w-[1680px] mx-auto flex flex-col 2xl:flex-row gap-6">
@@ -27,7 +35,9 @@ export default function Visao360Page() {
         <div className="flex-1 flex flex-col gap-6 w-full">
           <div className="flex flex-col gap-6 2xl:grid xl:grid-cols-3 w-full">
             <div className="2xl:col-span-2 w-full">
-              <IaSuggestionPanel />
+              <IaSuggestionPanel
+                iaRecommendation={data?.iaRecommendation ?? null}
+              />
             </div>
 
             <div className="flex flex-col gap-6 w-full">

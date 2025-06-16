@@ -4,8 +4,17 @@ import Bullet from "../ui/Bullet";
 import Image from "next/image";
 import iaAssistent from "@/public/icons/iaAssist.png";
 import { X } from "lucide-react";
-const IaSuggestionPanel = () => {
+import { IARecommendation } from "@/types/client";
+import { formatPrice } from "@/utils/format";
+
+interface Props {
+  iaRecommendation: IARecommendation | null;
+}
+
+const IaSuggestionPanel = ({ iaRecommendation }: Props) => {
   const [showIa, setShowIa] = useState(false);
+
+  const { plan, value, reasonWhy } = iaRecommendation ?? {};
 
   return (
     <div className="rounded-3xl p-6 bg-gradient-to-br from-[#1f2635] to-[#1b2230] text-white h-full flex flex-col gap-6 border-1 border-white/10 shadow-inner">
@@ -29,19 +38,21 @@ const IaSuggestionPanel = () => {
       <div className="bg-gradient-to-br from-[#252d3d] to-[#1e2432] rounded-2xl p-5 flex flex-col gap-4">
         <div>
           <h3 className="font-semibold">Oferta recomendada</h3>
-          <p className="text-sm text-gray-300 mt-1">
-            Seguro de vida individual com cobertura por morte e doenças graves
-          </p>
+          <p className="text-sm text-gray-300 mt-1">{iaRecommendation?.plan}</p>
         </div>
 
         <div className="flex justify-start gap-12 items-end pt-4 text-sm">
           <div>
             <p className="text-white/50">Valor recomendado</p>
-            <p className="text-white font-semibold text-lg">R$ 127,50/mês</p>
+            <p className="text-white font-semibold text-lg">
+              {formatPrice(value ?? 0)}/mês
+            </p>
           </div>
           <div>
             <p className="text-white/50">Probabilidade de conversão</p>
-            <p className="text-[#00DC04] font-bold text-lg">78%</p>
+            <p className="text-[#00DC04] font-bold text-lg">
+              {iaRecommendation?.conversionProbability}%
+            </p>
           </div>
         </div>
 
@@ -54,22 +65,12 @@ const IaSuggestionPanel = () => {
         <div>
           <h4 className="font-semibold text-lg mb-4">Reason Why</h4>
           <ul className="flex flex-col gap-3 text-sm text-gray-300">
-            <li className="flex gap-2 items-center">
-              <Bullet />
-              Cliente tem perfil "profissional liberal" compatível com produto
-            </li>
-            <li className="flex gap-2 items-center">
-              <Bullet />
-              Idade (35 anos) em faixa de preço competitivo
-            </li>
-            <li className="flex gap-2 items-center">
-              <Bullet />
-              Cliente já demonstrou preocupação com família em atendimentos
-            </li>
-            <li className="flex gap-2 items-center">
-              <Bullet />
-              <span> Produto complementa portfólio atual sem sobreposição</span>
-            </li>
+            {reasonWhy?.slice(0, 3).map((reason, index) => (
+              <li key={index} className="flex gap-2 items-center">
+                <Bullet />
+                {reason}
+              </li>
+            ))}
           </ul>
         </div>
 

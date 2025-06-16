@@ -2,18 +2,30 @@
 
 import { useState } from "react";
 import KpiChart from "../charts/KpiChart";
+import { KpisResponse } from "@/types/dashboard";
 
-const KpiEvolutionPanel = () => {
-  const [selectedKpi, setSelectedKpi] = useState("ARPU");
+interface Props {
+  data: KpisResponse | null;
+}
+const KpiEvolutionPanel = ({ data }: Props) => {
+  const [selectedKpi, setSelectedKpi] = useState<"ARPU" | "Conversão">("ARPU");
 
-  const kpis = ["Retenção", "Conversão", "Churn", "ARPU"];
+  // const kpis = ["Retenção", "Conversão", "Churn", "ARPU"];
+  const kpiOptions = ["ARPU", "Conversão"] as const;
+
+  const kpiSeries = {
+    ARPU: data?.arpuTrend || [],
+    Conversão: data?.conversionTrend || [],
+  };
+
+  const xAxisLabels = data?.labels || [];
 
   return (
     <div className="bg-white/5  text-white rounded-xl p-6 w-full max-h-[376px] h-full flex flex-col">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-bold">Evolução dos KPI's</h2>
         <div className="flex bg-white/5 h-[56px] gap-3 px-4 py-2 rounded-full">
-          {kpis.map((kpi) => (
+          {kpiOptions.map((kpi) => (
             <button
               key={kpi}
               className={`px-3 py-1 rounded-full text-sm font-medium transition ${
@@ -30,7 +42,11 @@ const KpiEvolutionPanel = () => {
       </div>
 
       <div className="flex-1">
-        <KpiChart kpi={selectedKpi} />
+        <KpiChart
+          kpi={selectedKpi}
+          data={kpiSeries[selectedKpi]}
+          categories={xAxisLabels}
+        />
       </div>
     </div>
   );

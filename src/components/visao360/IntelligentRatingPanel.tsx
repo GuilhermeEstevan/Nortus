@@ -61,7 +61,7 @@ const IntelligentRatingPanel = () => {
                 Alto
               </span>
             </div>
-            <div className="w-[calc(100%-32px)] h-[16px] bg-gray-700 rounded-full drop-shadow-2xl overflow-hidden">
+            <div className="w-[calc(90%)] h-[16px] bg-gray-700 rounded-full drop-shadow-2xl overflow-hidden">
               <ProgressChart value={95} color="#00DC04" />
             </div>
           </div>
@@ -84,7 +84,7 @@ const IntelligentRatingPanel = () => {
                 Médio
               </span>
             </div>
-            <div className="w-[calc(100%-32px)] h-[16px] bg-gray-700 rounded-full drop-shadow-2xl overflow-hidden">
+            <div className="w-[calc(90%)] h-[16px] bg-gray-700 rounded-full drop-shadow-2xl overflow-hidden">
               <ProgressChart value={70} color="#E7BD00" />
             </div>
           </div>

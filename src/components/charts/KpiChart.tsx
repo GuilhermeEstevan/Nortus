@@ -7,9 +7,11 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 type Props = {
   kpi: string;
+  data: number[];
+  categories: string[];
 };
 
-const KpiChart = ({ kpi }: Props) => {
+const KpiChart = ({ kpi, data, categories }: Props) => {
   const options: ApexOptions = {
     chart: {
       type: "area",
@@ -30,20 +32,7 @@ const KpiChart = ({ kpi }: Props) => {
       width: 3,
     },
     xaxis: {
-      categories: [
-        "Jan",
-        "Fev",
-        "Mar",
-        "Abr",
-        "Mai",
-        "Jun",
-        "Jul",
-        "Ago",
-        "Set",
-        "Out",
-        "Nov",
-        "Dez",
-      ],
+      categories,
       labels: {
         style: {
           colors: "#FFFFFF",
@@ -87,10 +76,9 @@ const KpiChart = ({ kpi }: Props) => {
   const series = [
     {
       name: kpi,
-      data: [80, 120, 160, 190, 100, 90, 110, 130, 150, 190, 220, 200],
+      data,
     },
   ];
-
   return (
     <Chart
       options={options}
