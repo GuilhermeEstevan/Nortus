@@ -12,26 +12,29 @@ export default function SegmentImpactPanel() {
         </h2>
 
         <div className="flex gap-4">
-          <div className="w-1/2">
+          {/* Donut */}
+          <div className="w-[200px]">
             <SegmentImpactDonut />
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <p className="font-semibold text-white -mb-6 opacity-60">
-              Cluster estratégicos
-            </p>
-            {labels.map((label, index) => (
-              <div
-                key={label}
-                className="flex items-center gap-2 bg-[#1F2937] px-4 text-xs font-medium rounded-full"
-              >
-                <span
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: colors[index] }}
-                />
-                {label}
-              </div>
-            ))}
+          {/* Título + Chips organizados */}
+          <div className="flex flex-col gap-2">
+            <p className="text-sm text-white/70 mb-1">Cluster estratégicos</p>
+
+            <div className="flex flex-wrap gap-2">
+              {labels.map((label, index) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-2 bg-[#1F2937] px-4 py-1 text-xs font-medium rounded-full"
+                >
+                  <span
+                    className="w-2 h-2 rounded-full"
+                    style={{ backgroundColor: colors[index] }}
+                  />
+                  {label}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
