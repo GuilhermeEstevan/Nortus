@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const ClientInfoPanel = () => {
   return (
-    <div className="h-full rounded-xl px-4 ">
+    <div className="h-full rounded-xl px-0 ">
       <div className="bg-[#111827] rounded-xl p-4 px-5 h-full border-1 border-white/10 text-white ">
         <div className="text-center mb-8 mt-6">
           <h2 className="text-lg font-bold">Ricardo Leite</h2>

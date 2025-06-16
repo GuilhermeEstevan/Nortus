@@ -87,7 +87,7 @@ const IaSuggestionPanel = () => {
           <div className="group absolute bottom-10 right-[10px] xl:bottom-10 xl:right-4 animate-fade-in z-30">
             <button
               onClick={() => setShowIa(false)}
-              className="absolute -top-10 -right-0 bg-red-600 text-white w-6 h-6 rounded-full text-xs flex items-center justify-center z-40 hover:bg-red-700 opacity-0 min-[1000px]:opacity-100 group-hover:opacity-100 transition-opacity duration-200"
+              className="absolute -top-10 -right-0 bg-red-600 text-white w-6 h-6 rounded-full text-xs flex items-center justify-center z-40 hover:bg-red-700 opacity-0 max-[1680px]:opacity-100 group-hover:opacity-100 transition-opacity duration-200"
             >
               <span className="flex justify-center items-center">
                 <X className="w-3 h-3" />

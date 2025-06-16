@@ -3,16 +3,17 @@ import ProgressChart from "../charts/ProgressChart";
 
 const IntelligentRatingPanel = () => {
   return (
-    <div className="text-white space-y-6 ">
+    <div className="text-white space-y-6">
       <h2 className="text-xl font-extrabold">Classificação inteligente</h2>
 
-      <div className="px-2 rounded-xl grid grid-cols-[1fr_2fr] gap-6 items-center">
+      <div className="flex flex-col xl:flex-row gap-6 items-stretch w-full">
+        {/* Bloco do gráfico circular */}
         <div
-          className="flex flex-col justify-between text-center space-y-6 px-6 pt-6 pb-4 rounded-xl shadow-inner"
+          className="xl:basis-1/3 flex flex-col justify-between text-center space-y-6 px-6 pt-6 pb-4 rounded-xl shadow-inner flex-1 min-w-0"
           style={{
             background: `linear-gradient(135deg, #222739 0%, #212639 50%, #212638 100%)`,
             backgroundBlendMode: "overlay",
-            boxShadow: "inset 0 0 0 1000px rgba(255, 255, 255, 0.05)", // camada branca translúcida
+            boxShadow: "inset 0 0 0 1000px rgba(255, 255, 255, 0.05)",
           }}
         >
           <DiamondGaugeChart value={75} />
@@ -40,14 +41,16 @@ const IntelligentRatingPanel = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 h-full">
+        {/* Bloco dos dois scores */}
+        <div className="xl:basis-2/3 flex flex-col gap-4 flex-1 min-w-0">
+          {/* Expansão */}
           <div
-            className="flex-1 py-6 px-6 rounded-xl flex flex-col justify-center gap-8"
+            className="py-6 px-6 rounded-xl flex flex-col justify-center gap-8 h-full"
             style={{
               background:
                 "linear-gradient(135deg, #222739 0%, #212639 50%, #212638 100%)",
               backgroundBlendMode: "overlay",
-              boxShadow: "inset 0 0 0 1000px rgba(255, 255, 255, 0.05)", // camada branca com 5% opacidade
+              boxShadow: "inset 0 0 0 1000px rgba(255, 255, 255, 0.05)",
             }}
           >
             <div className="flex justify-start mb-1 items-center gap-2">
@@ -63,13 +66,14 @@ const IntelligentRatingPanel = () => {
             </div>
           </div>
 
+          {/* Retenção */}
           <div
-            className="flex-1 py-6 px-6 rounded-xl flex flex-col justify-center gap-8"
+            className="py-6 px-6 rounded-xl flex flex-col justify-center gap-8 h-full"
             style={{
               background:
                 "linear-gradient(135deg, #222739 0%, #212639 50%, #212638 100%)",
               backgroundBlendMode: "overlay",
-              boxShadow: "inset 0 0 0 1000px rgba(255, 255, 255, 0.05)", // camada branca com 5% opacidade
+              boxShadow: "inset 0 0 0 1000px rgba(255, 255, 255, 0.05)",
             }}
           >
             <div className="flex justify-start gap-2 mb-1 items-center">
@@ -80,7 +84,7 @@ const IntelligentRatingPanel = () => {
                 Médio
               </span>
             </div>
-            <div className="w-full  bg-gray-700 rounded-full drop-shadow-2xl">
+            <div className="w-full bg-gray-700 rounded-full drop-shadow-2xl">
               <ProgressChart value={70} color="#E7BD00" />
             </div>
           </div>
