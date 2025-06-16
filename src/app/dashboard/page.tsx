@@ -2,6 +2,7 @@ import ActiveOffersRankingTable from "@/components/dashboard/ActiveOffersRanking
 import PrimaryHighlightPanel from "@/components/dashboard/PrimaryHighlightPanel";
 import KpiEvolutionPanel from "@/components/dashboard/KpiEvolutionPanel";
 import SecondaryHighlightPanel from "@/components/dashboard/SecondaryHighlightPanel";
+import SegmentImpactPanel from "@/components/dashboard/SegmentImpactPanel";
 
 export default function DashboardPage() {
   return (
@@ -25,9 +26,9 @@ export default function DashboardPage() {
           {/* <div className="bg-green-900 h-[120px] rounded-xl flex items-center justify-center text-white"> */}
           <SecondaryHighlightPanel />
           {/* </div> */}
-          <div className="bg-yellow-900 h-[400px] rounded-xl flex items-center justify-center text-white">
-            Mapa de impacto por segmento
-          </div>
+          {/* <div className="bg-yellow-900 h-[400px] rounded-xl flex items-center justify-center text-white"> */}
+          <SegmentImpactPanel />
+          {/* </div> */}
           <div className="bg-red-900 h-[180px] rounded-xl flex items-center justify-center text-white">
             Workflows inteligentes ativos
           </div>
