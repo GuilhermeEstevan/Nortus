@@ -1,5 +1,15 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import LoadingSpinner from "@/components/spinners/LoadingSpinner";
 
 export default function Home() {
-  return <div></div>;
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/login");
+  }, [router]);
+
+  return <LoadingSpinner />;
 }

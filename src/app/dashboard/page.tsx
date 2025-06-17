@@ -10,6 +10,7 @@ import { useKpiStore } from "@/stores/kpi-store";
 import { useEffect } from "react";
 import { useSegmentsStore } from "@/stores/segments-store";
 import { useOffersStore } from "@/stores/offers-store";
+import DashboardSkeleton from "@/components/skeletons/DashboardSkeleton";
 
 export default function DashboardPage() {
   const { fetch: kpiFetch, data: kpiData } = useKpiStore();
@@ -24,7 +25,15 @@ export default function DashboardPage() {
 
   useEffect(() => {
     fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const isLoading =
+    !kpiData || offersData.length === 0 || segmentsData.length === 0;
+
+  if (isLoading) {
+    return <DashboardSkeleton />;
+  }
 
   return (
     <div className="p-6">

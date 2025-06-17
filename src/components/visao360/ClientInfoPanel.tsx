@@ -170,7 +170,7 @@ const ClientInfoPanel = ({ clientData }: Props) => {
             <ul className="text-sm text-gray-300 space-y-2">
               {clientData?.actions.map((action, index) => (
                 <li key={index}>
-                  <span className="text-white/50 text-xs">
+                  <span key={tick} className="text-white/50 text-xs">
                     {getRelativeTimeFromNow(action.timestamp)}
                   </span>
                   <br />

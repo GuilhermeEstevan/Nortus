@@ -1,6 +1,6 @@
 "use client";
 
-import LoadingSpinner from "@/components/spinners/LoadingSpinner";
+import Visao360Skeleton from "@/components/skeletons/Visao360Skeleton";
 import ClientInfoPanel from "@/components/visao360/ClientInfoPanel";
 import IaSuggestionPanel from "@/components/visao360/IASugestionPanel";
 import InsuranceUpgradePanel from "@/components/visao360/InsuranceUpgradePanel";
@@ -8,21 +8,26 @@ import IntelligentRatingPanel from "@/components/visao360/IntelligentRatingPanel
 import LifeInsurancePanel from "@/components/visao360/LifeInsurancePanel";
 import { useClientStore } from "@/stores/client-store";
 import { useEffect } from "react";
+import { toast } from "sonner";
 
 export default function Visao360Page() {
-  const { data, loading, error, fetch, hasLoadedOnce } = useClientStore();
+  const { data, error, fetch, hasLoadedOnce } = useClientStore();
 
   useEffect(() => {
     fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
+
   if (!hasLoadedOnce) {
-    return (
-      <div className="w-full h-[60vh] flex items-center justify-center">
-        <LoadingSpinner />
-      </div>
-    );
+    return <Visao360Skeleton />;
   }
+
   return (
     <div className="p-4 2xl:p-6">
       <div className="max-w-[1680px] mx-auto flex flex-col 2xl:flex-row gap-6">

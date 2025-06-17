@@ -38,7 +38,7 @@ const IaSuggestionPanel = ({ iaRecommendation }: Props) => {
       <div className="bg-gradient-to-br from-[#252d3d] to-[#1e2432] rounded-2xl p-5 flex flex-col gap-4">
         <div>
           <h3 className="font-semibold">Oferta recomendada</h3>
-          <p className="text-sm text-gray-300 mt-1">{iaRecommendation?.plan}</p>
+          <p className="text-sm text-gray-300 mt-1">{plan}</p>
         </div>
 
         <div className="flex justify-start gap-12 items-end pt-4 text-sm">

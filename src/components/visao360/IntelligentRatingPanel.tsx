@@ -9,7 +9,7 @@ const IntelligentRatingPanel = () => {
       <div className="flex flex-col xl:flex-row gap-6 items-stretch w-full">
         {/* Bloco do gráfico circular */}
         <div
-          className="xl:basis-1/3 flex flex-col justify-between text-center space-y-6 px-6 pt-6 pb-4 rounded-xl shadow-inner flex-1 min-w-0"
+          className="xl:basis-4/12 flex flex-col justify-between text-center space-y-6 px-6 pt-6 pb-4 rounded-xl shadow-inner flex-1 min-w-0"
           style={{
             background: `linear-gradient(135deg, #222739 0%, #212639 50%, #212638 100%)`,
             backgroundBlendMode: "overlay",
@@ -18,17 +18,17 @@ const IntelligentRatingPanel = () => {
         >
           <DiamondGaugeChart value={75} />
 
-          <div className="flex items-start justify-between w-full text-sm px-2">
+          <div className="flex items-end justify-center w-full text-sm px-2 pb-2">
             <div className="flex flex-col items-start w-full">
               <span className="text-white/50 text-xs mb-1 whitespace-nowrap">
                 Life time value
               </span>
-              <span className="text-white text-lg font-extrabold whitespace-nowrap">
+              <span className="text-white text-lg font-extrabold whitespace-nowrap mb-0">
                 R$ 24.580,00
               </span>
             </div>
 
-            <div className="w-px h-10 bg-gray-600 mx-6" />
+            <div className="w-px h-8 bg-gray-600 mx-4" />
 
             <div className="flex flex-col items-start w-full">
               <span className="text-white/50 text-xs mb-1 whitespace-nowrap">

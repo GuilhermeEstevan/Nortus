@@ -18,7 +18,10 @@ export default function ActiveOffersRankingTable({ data }: Props) {
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-lg bg-[#1f2937] pb-2">
+      <div
+        className="overflow-x-auto overflow-y-hidden rounded-lg bg-[#1f2937] pb-2"
+        style={{ minHeight: "320px" }}
+      >
         <table className="w-full text-sm">
           <thead>
             <tr className="text-left text-gray-400 border-b border-white/10">

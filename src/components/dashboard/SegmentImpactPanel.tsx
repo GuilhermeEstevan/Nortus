@@ -20,7 +20,7 @@ export default function SegmentImpactPanel({ data }: Props) {
   const colors = labels.map((label) => colorMap[label]);
 
   return (
-    <div className="bg-[#111827] text-white rounded-xl p-6 w-full h-[400px] flex flex-col justify-between">
+    <div className="bg-[#111827] text-white rounded-xl p-6 w-full min-h-[400px] flex flex-col justify-between">
       <div>
         <h2 className="text-xl font-bold mb-12">
           Mapa de impacto por segmento
@@ -28,7 +28,7 @@ export default function SegmentImpactPanel({ data }: Props) {
 
         <div className="flex gap-4">
           {/* Donut */}
-          <div className="w-[200px]">
+          <div className="min-w-[200px]">
             <SegmentImpactDonut
               labels={labels}
               series={series}
@@ -36,7 +36,6 @@ export default function SegmentImpactPanel({ data }: Props) {
             />
           </div>
 
-          {/* Título + Chips */}
           <div className="flex flex-col gap-2">
             <p className="text-sm text-white/70 mb-1">Cluster estratégicos</p>
 
