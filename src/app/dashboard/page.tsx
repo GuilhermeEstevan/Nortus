@@ -11,11 +11,20 @@ import { useEffect } from "react";
 import { useSegmentsStore } from "@/stores/segments-store";
 import { useOffersStore } from "@/stores/offers-store";
 import DashboardSkeleton from "@/components/skeletons/DashboardSkeleton";
+import { toast } from "sonner";
 
 export default function DashboardPage() {
-  const { fetch: kpiFetch, data: kpiData } = useKpiStore();
-  const { fetch: segmentsFetch, data: segmentsData } = useSegmentsStore();
-  const { fetch: offersFetch, data: offersData } = useOffersStore();
+  const { fetch: kpiFetch, data: kpiData, error: kpiError } = useKpiStore();
+  const {
+    fetch: segmentsFetch,
+    data: segmentsData,
+    error: segmentsError,
+  } = useSegmentsStore();
+  const {
+    fetch: offersFetch,
+    data: offersData,
+    error: offersError,
+  } = useOffersStore();
 
   const fetch = async () => {
     await kpiFetch();
@@ -27,6 +36,19 @@ export default function DashboardPage() {
     fetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Tratamento de erros
+  useEffect(() => {
+    if (kpiError) {
+      toast.error(kpiError);
+    }
+    if (segmentsError) {
+      toast.error(segmentsError);
+    }
+    if (offersError) {
+      toast.error(offersError);
+    }
+  }, [kpiError, segmentsError, offersError]);
 
   const isLoading =
     !kpiData || offersData.length === 0 || segmentsData.length === 0;

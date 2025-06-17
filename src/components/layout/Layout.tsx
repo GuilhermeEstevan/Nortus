@@ -6,7 +6,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Sidebar />
 
       <div className="flex flex-col flex-1">
-        {" "}
         <Navbar />
         <main className="flex-1 overflow-y-auto p-6 pt-[60px] mt-8">
           {children}

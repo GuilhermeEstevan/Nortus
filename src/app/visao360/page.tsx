@@ -18,6 +18,7 @@ export default function Visao360Page() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Tratamento de erros
   useEffect(() => {
     if (error) {
       toast.error(error);

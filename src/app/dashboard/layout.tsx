@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Layout from "@/components/layout/Layout";
 import LoadingSpinner from "@/components/spinners/LoadingSpinner";
+import Cookies from "js-cookie";
 
 export default function DashboardLayout({
   children,
@@ -16,7 +17,9 @@ export default function DashboardLayout({
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-    if (!storedUser) {
+    const token = Cookies.get("token");
+
+    if (!storedUser || !token) {
       router.replace("/login");
     } else {
       useAuthStore.setState({ user: JSON.parse(storedUser) });
