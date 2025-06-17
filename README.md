@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Loomi Dashboard - NORTUS
 
-## Getting Started
+Desenvolvimento de uma interface de dashboard operacional para a Nortus, uma plataforma de inteligência artificial voltada para times de vendas e atendimento. A aplicação permite visualizar métricas de desempenho, classificações inteligentes, sugestões de IA e visão 360° do cliente, consumindo dados a partir de uma API mockada.
 
-First, run the development server:
+## 🛠️ Tecnologias utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js** (v13+ com App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Zustand** (gerenciamento de estado global)
+- **Axios** (consumo de APIs)
+- **ESLint + Prettier** (padrão de código)
+- **ApexCharts** (gráficos)
+- **Sonner** (toasts de feedback)
+
+## 📁 Organização de pastas
+```
+src/
+├── app – páginas com estrutura App Router
+├── components – componentes reutilizáveis 
+├── features – espaço reservado para lógicas isoladas por feature
+├── services – chamadas à API mockada 
+├── stores – estado global com Zustand
+├── types – tipagens TypeScript organizadas por domínio
+├── utils – funções auxiliares e constantes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Funcionalidades principais implementadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **🔐 Tela de Login fictício** (com armazenamento em cookie + localStorage)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **📊 Página de Dashboard com:**
+  - Evolução de KPIs (ARPU, Conversão, Retenção, Churn)
+  - Ranking de ofertas ativas
+  - Mapa de impacto por segmento (gráfico donut + clusters)
+  - Workflows inteligentes ativos
 
-## Learn More
+- **👤 Página Visão 360° do cliente com:**
+  - Dados do cliente, produtos contratados, perfil e frases captadas
+  - Sugestões da IA com Reason Why
+  - Classificação inteligente com gauge e progress bars
 
-To learn more about Next.js, take a look at the following resources:
+- **⚡ Recursos adicionais:**
+  - Skeleton Loaders para ambas as páginas
+  - Feedback visual com toast de erro (ex: falha ao carregar cliente)
+  - Responsividade mínima em telas a partir de 1000px
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✅ Requisitos atendidos do desafio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ✓ Projeto configurado com ESLint + Prettier
+- ✓ Uso de estado global com Zustand
+- ✓ Estrutura de código modular e escalável
+- ✓ Fidelidade visual conforme protótipo Figma
+- ✓ Separação de responsabilidades entre componentes, serviços e estados
+- ✓ Commit descritivo com uso de Git e GitHub (fluxo por branches e PR)
+- ✓ Feedbacks visuais com a biblioteca Sonner
+- ✓ Documentação clara e gerenciador de tarefas via Notion
+- ✓ Uso consciente de ferramentas de IA durante o processo de desenvolvimento
 
-## Deploy on Vercel
+## 🚀 Como rodar o projeto localmente
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clonar o repositório
+   ```bash
+   git clone https://github.com/GuilhermeEstevan/loomi.git
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Instalar dependências
+   ```bash
+   npm install
+   ```
+
+3. Rodar o projeto
+   ```bash
+   npm run dev
+   ```
+
+4. Acessar via http://localhost:3000
+
+## 📝 Link do gerenciador de tarefas
+Todas as tarefas foram registradas no Notion
+https://www.notion.so/215c8388c63380ca8916c6ba45b2ecd8?v=215c8388c63380dc8ef0000c82aff6b7&source=copy_link
+
+## 👨‍💻 Autores e créditos
+Desenvolvido por Guilherme Estevan como parte do desafio técnico React da Loomi.
+Com o suporte da documentação fornecida e protótipos do Figma.
