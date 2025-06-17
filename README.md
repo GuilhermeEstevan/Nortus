@@ -76,6 +76,9 @@ src/
 
 4. Acessar via http://localhost:3000
 
+## 🌐 Repositório na nuvem
+Acesse o projeto online: https://nortus.netlify.app
+
 ## 📝 Link do gerenciador de tarefas
 Todas as tarefas foram registradas no Notion
 https://www.notion.so/215c8388c63380ca8916c6ba45b2ecd8?v=215c8388c63380dc8ef0000c82aff6b7&source=copy_link
