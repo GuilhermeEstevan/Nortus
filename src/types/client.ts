@@ -12,11 +12,10 @@ export interface Product {
   name: string;
   price: number;
   status: string;
-  [key: string]: any; 
 }
 
 export interface ClientAction {
-  type: string;
+  description: string;
   timestamp: string;
 }
 

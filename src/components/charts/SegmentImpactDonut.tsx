@@ -5,16 +5,22 @@ import { ApexOptions } from "apexcharts";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-const SegmentImpactDonut = () => {
+interface Props {
+  labels: string[];
+  series: number[];
+  colors: string[];
+}
+
+const SegmentImpactDonut = ({ labels, series, colors }: Props) => {
   const options: ApexOptions = {
     chart: {
       type: "donut",
     },
-    labels: ["Premium", "Alta Renda", "Familiar", "Profissional", "Jovem"],
+    labels,
     legend: { show: false },
     stroke: { show: false },
     dataLabels: { enabled: false },
-    colors: ["#009EE3", "#0057FF", "#49C9E0", "#1B4CE0", "#60DBFF"],
+    colors: colors,
     plotOptions: {
       pie: {
         donut: {
@@ -22,9 +28,13 @@ const SegmentImpactDonut = () => {
         },
       },
     },
+    tooltip: {
+      enabled: true,
+      y: {
+        formatter: (val: number) => `${val.toFixed(1)}%`,
+      },
+    },
   };
-
-  const series = [25, 20, 18, 22, 15];
 
   return <Chart options={options} series={series} type="donut" width="100%" />;
 };

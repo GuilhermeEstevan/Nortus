@@ -9,4 +9,9 @@ export interface AuthUser {
   email: string;
   role: string;
   permissions: string[];
+  avatar?: string;
+  settings?: {
+    theme: string;
+    language: string;
+  }
 }

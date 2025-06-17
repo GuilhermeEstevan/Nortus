@@ -1,6 +1,7 @@
 import Image from "next/image";
 import blueChartIcon from "@/public/icons/blueChartIcon.png";
 import copyIcon from "@/public/icons/copyIcon.png";
+
 export default function ActiveWorkflowsPanel() {
   return (
     <div className="bg-[#111827] text-white rounded-xl p-6 w-full h-[180px] flex flex-col justify-between">

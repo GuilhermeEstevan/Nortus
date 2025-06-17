@@ -4,6 +4,7 @@ import { useAuthStore } from "@/stores/auth-stores";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Layout from "@/components/layout/Layout";
+import LoadingSpinner from "@/components/spinners/LoadingSpinner";
 
 export default function DashboardLayout({
   children,
@@ -20,9 +21,10 @@ export default function DashboardLayout({
     } else {
       useAuthStore.setState({ user: JSON.parse(storedUser) });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!user) return null;
+  if (!user) return <LoadingSpinner />;
 
   return <Layout>{children}</Layout>;
 }

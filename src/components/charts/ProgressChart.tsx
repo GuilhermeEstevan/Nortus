@@ -15,6 +15,7 @@ const ProgressChart = ({ value, color }: Props) => {
     chart: {
       type: "bar",
       sparkline: { enabled: true },
+      animations: { enabled: true },
     },
     plotOptions: {
       bar: {

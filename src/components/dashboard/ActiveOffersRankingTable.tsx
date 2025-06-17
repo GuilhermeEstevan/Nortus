@@ -1,47 +1,14 @@
 "use client";
 
+import { Offer } from "@/types/dashboard";
+import { formatCompactPrice } from "@/utils/format";
 import { Search } from "lucide-react";
 
-const mockData = [
-  {
-    offer: "Seguro Auto Plus",
-    conversion: "78%",
-    revenue: "R$ 125.0k",
-    feedback: "4.8/5",
-  },
-  {
-    offer: "Pacote Familiar Total",
-    conversion: "65%",
-    revenue: "R$ 210.0k",
-    feedback: "4.6/5",
-  },
-  {
-    offer: "Vida Empresarial",
-    conversion: "45%",
-    revenue: "R$ 180.0k",
-    feedback: "4.2/5",
-  },
-  {
-    offer: "Residencial Premium",
-    conversion: "72%",
-    revenue: "R$ 95.0k",
-    feedback: "4.7/5",
-  },
-  {
-    offer: "Vida Empresarial",
-    conversion: "45%",
-    revenue: "R$ 180.0k",
-    feedback: "4.2/5",
-  },
-  {
-    offer: "Pacote Familiar Total",
-    conversion: "65%",
-    revenue: "R$ 210.0k",
-    feedback: "4.6/5",
-  },
-];
+interface Props {
+  data: Offer[];
+}
 
-export default function ActiveOffersRankingTable() {
+export default function ActiveOffersRankingTable({ data }: Props) {
   return (
     <div className="bg-white/5 rounded-[16px] p-6  w-full min-h-[435px] flex flex-col text-white gap-4">
       <div className="flex items-center justify-between">
@@ -51,7 +18,10 @@ export default function ActiveOffersRankingTable() {
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-lg bg-[#1f2937] pb-2">
+      <div
+        className="overflow-x-auto overflow-y-hidden rounded-lg bg-[#1f2937] pb-2"
+        style={{ minHeight: "320px" }}
+      >
         <table className="w-full text-sm">
           <thead>
             <tr className="text-left text-gray-400 border-b border-white/10">
@@ -68,20 +38,20 @@ export default function ActiveOffersRankingTable() {
             </tr>
           </thead>
           <tbody className="text-white">
-            {mockData.map((row, index) => (
+            {data.map((row, index) => (
               <tr
                 key={index}
                 className="border-b border-white/5 last:border-none"
               >
-                <td className="px-4 py-3 text-sm font-semibold">{row.offer}</td>
+                <td className="px-4 py-3 text-sm font-semibold">{row.name}</td>
                 <td className="px-4 py-3 text-right text-sm font-semibold">
-                  {row.conversion}
+                  {row.conversion}%
                 </td>
                 <td className="px-4 py-3 text-right text-sm font-semibold">
-                  {row.revenue}
+                  {formatCompactPrice(row.revenue)}
                 </td>
                 <td className="px-4 py-3 text-right text-sm font-semibold">
-                  {row.feedback}
+                  {row.feedback}/5
                 </td>
               </tr>
             ))}
