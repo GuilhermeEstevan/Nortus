@@ -47,15 +47,15 @@ src/
 
 ## ✅ Requisitos atendidos do desafio
 
-- ✓ Projeto configurado com ESLint + Prettier
-- ✓ Uso de estado global com Zustand
-- ✓ Estrutura de código modular e escalável
-- ✓ Fidelidade visual conforme protótipo Figma
-- ✓ Separação de responsabilidades entre componentes, serviços e estados
-- ✓ Commit descritivo com uso de Git e GitHub (fluxo por branches e PR)
-- ✓ Feedbacks visuais com a biblioteca Sonner
-- ✓ Documentação clara e gerenciador de tarefas via Notion
-- ✓ Uso consciente de ferramentas de IA durante o processo de desenvolvimento
+ ✓ Projeto configurado com ESLint + Prettier
+ ✓ Uso de estado global com Zustand
+ ✓ Estrutura de código modular e escalável
+ ✓ Fidelidade visual conforme protótipo Figma
+ ✓ Separação de responsabilidades entre componentes, serviços e estados
+ ✓ Commit descritivo com uso de Git e GitHub (fluxo por branches e PR)
+ ✓ Feedbacks visuais com a biblioteca Sonner
+ ✓ Documentação clara e gerenciador de tarefas via Notion
+ ✓ Uso consciente de ferramentas de IA durante o processo de desenvolvimento
 
 ## 🚀 Como rodar o projeto localmente
 
