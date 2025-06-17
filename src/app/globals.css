@@ -68,7 +68,7 @@ button {
 /* Scrollbar */
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-    width: 20px;
+    width: 12px;
     height: 20px;
   }
 
