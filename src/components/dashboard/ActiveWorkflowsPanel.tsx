@@ -22,10 +22,22 @@ export default function ActiveWorkflowsPanel() {
 
         <div className="flex gap-3 text-blue-500">
           <button>
-            <Image src={copyIcon} alt="Chart" width={24} height={24} />
+            <Image
+              src={copyIcon}
+              alt="Chart"
+              width={24}
+              height={24}
+              className="h-[24px] w-[24px]"
+            />
           </button>
           <button>
-            <Image src={blueChartIcon} alt="Chart" width={24} height={24} />
+            <Image
+              src={blueChartIcon}
+              alt="Chart"
+              width={24}
+              height={24}
+              className="h-[24px] w-[24px]"
+            />
           </button>
         </div>
       </div>

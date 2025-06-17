@@ -25,7 +25,7 @@ export default function HighlightPanel({ data }: Props) {
           alt="Ícone de aumento"
           width={90}
           height={90}
-          className="absolute bottom-0 right-0 drop-shadow-2xl"
+          className="absolute bottom-0 right-0 drop-shadow-2xl h-[90px] w-[90px]"
         />
       </div>
 
