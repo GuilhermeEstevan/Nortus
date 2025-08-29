@@ -13,10 +13,10 @@ export const useConversationStore = create<ConversationState>((set) => ({
   data: [],
   loading: false,
   error: null,
-  fetch: async (clientId = 1) => {
+  fetch: async () => {
     set({ loading: true, error: null });
     try {
-      const data = await getConversation(clientId);
+      const data = await getConversation();
       set({ data });
     } catch {
       set({ error: "Erro ao buscar conversas" });

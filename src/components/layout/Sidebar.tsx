@@ -1,7 +1,7 @@
 import Link from "next/link";
 import iconPerson from "@/public/icons/person.png";
 import iconChart from "@/public/icons/chart.png";
-import iconChat from "@/public/icons/chat.png";
+// import iconChat from "@/public/icons/chat.png";
 import logo from "@/public/icons/logo.png";
 import Image from "next/image";
 import { usePathname } from "next/navigation";

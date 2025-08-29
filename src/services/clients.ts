@@ -5,7 +5,7 @@ import { MOCK_CLIENT } from "@/utils/mocks/clients_mock";
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export async function getClient(_clientId = 1): Promise<Client> {
+export async function getClient(): Promise<Client> {
   await sleep(300); 
   return MOCK_CLIENT;
 }

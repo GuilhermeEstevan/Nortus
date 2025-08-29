@@ -16,10 +16,10 @@ export const useClientStore = create<ClientState>((set) => ({
   error: null,
   hasLoadedOnce: false,
 
-  fetch: async (clientId = 1) => {
+  fetch: async () => {
     set({ loading: true, error: null });
     try {
-      const data = await getClient(clientId);
+      const data = await getClient();
       set({ data , hasLoadedOnce: true});
     } catch {
       set({ error: "Erro ao buscar cliente" });

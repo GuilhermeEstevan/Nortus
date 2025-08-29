@@ -1,4 +1,4 @@
-import { api } from "./api";
+// import { api } from "./api";
 import { KpisResponse, Offer, SegmentsResponse } from "@/types/dashboard";
 
 import { MOCK_KPIS } from "@/utils/mocks/kpis_mock";

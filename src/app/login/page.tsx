@@ -1,13 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { fakeLogin } from "@/services/auth";
-import { useAuthStore } from "@/stores/auth-stores";
+// import { fakeLogin } from "@/services/auth";
+// import { useAuthStore } from "@/stores/auth-stores";
 import { toast } from "sonner";
 
 export default function LoginPage() {
   const router = useRouter();
-  const login = useAuthStore((state) => state.login);
+  // const login = useAuthStore((state) => state.login);
 
   const handleLogin = async () => {
     try {
