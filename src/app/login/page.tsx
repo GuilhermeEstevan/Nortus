@@ -11,8 +11,8 @@ export default function LoginPage() {
 
   const handleLogin = async () => {
     try {
-      const { token, user } = await fakeLogin();
-      login(user, token);
+      // const { token, user } = await fakeLogin();
+      // login(user, token);
       toast.success("Seja bem-vindo!");
       router.push("/visao360");
     } catch (err: unknown) {

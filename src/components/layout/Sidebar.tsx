@@ -21,11 +21,11 @@ const sidebarItems = [
     path: "/dashboard",
     tooltip: "dashboard",
   },
-  {
-    icon: <Image src={iconChat} alt="Ícone de Chat" width={24} height={24} />,
-    path: "#",
-    tooltip: "Conversas",
-  },
+  // {
+  //   icon: <Image src={iconChat} alt="Ícone de Chat" width={24} height={24} />,
+  //   path: "#",
+  //   tooltip: "Conversas",
+  // },
 ];
 
 export default function Sidebar() {

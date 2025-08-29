@@ -1,7 +1,10 @@
-import { api } from "./api";
 import { ConversationMessage } from "@/types/conversation";
+import { MOCK_CONVERSATION } from "@/utils/mocks/conversations_mock";
 
-export async function getConversation(clientId = 1): Promise<ConversationMessage[]> {
-  const res = await api.get<ConversationMessage[]>(`/conversations/${clientId}.json`);
-  return res.data;
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export async function getConversation(_clientId = 1): Promise<ConversationMessage[]> {
+  await sleep(300);
+  return MOCK_CONVERSATION;
 }

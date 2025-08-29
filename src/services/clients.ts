@@ -1,7 +1,11 @@
-import { api } from "./api";
+// src/services/clients.ts
 import { Client } from "@/types/client";
+import { MOCK_CLIENT } from "@/utils/mocks/clients_mock";
 
-export async function getClient(clientId = 1): Promise<Client> {
-  const res = await api.get<Client>(`/clients/${clientId}.json`);
-  return res.data;
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export async function getClient(_clientId = 1): Promise<Client> {
+  await sleep(300); 
+  return MOCK_CLIENT;
 }
